@@ -67,7 +67,7 @@ module.exports = async (client, queue, track) => {
         await client.distube.skip(message).then((song) => {
           const embed = new EmbedBuilder()
             .setColor("#000001")
-            .setDescription("`⏭` | **Şarkı başarıyla geçildi!**");
+            .setDescription("`⏭` | **GEÇ KARDEŞİM YOK MU BAŞKA ŞARKI?**");
 
           nowplay.edit({ components: [] });
           message.reply({ embeds: [embed], ephemeral: true });

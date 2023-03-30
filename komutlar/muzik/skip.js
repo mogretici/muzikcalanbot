@@ -31,7 +31,7 @@ module.exports = {
       client.distube.skip(message).then((song) => {
         const embed = new EmbedBuilder()
           .setColor("#000001")
-          .setDescription("`⏭` | **Şarkı başarıyla geçildi!**");
+          .setDescription("`⏭` | **GEÇ KARDEŞİM YOK MU BAŞKA ŞARKI?**");
 
         msg.edit({ content: " ", embeds: [embed] });
       });

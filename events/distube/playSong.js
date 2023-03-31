@@ -60,7 +60,7 @@ module.exports = async (client, queue, track) => {
       if (queue.songs.length === 1 && queue.autoplay === false) {
         const embed = new EmbedBuilder()
           .setColor("#000001")
-          .setDescription("`🚨` | **Kuyrukta **`Şarkı`** bulunamadı!");
+          .setDescription("`🚨` | **ŞARKI MARKI YOK KARDEŞİM KALMADI **!");
 
         message.reply({ embeds: [embed], ephemeral: true });
       } else {
@@ -137,29 +137,29 @@ module.exports = async (client, queue, track) => {
 
 function disspace(nowQueue, nowTrack) {
   let hatisReplikleri = [
-    "PARDON BİŞE SORUCAM ERKOLAR KAPATILDI MI?",
-    "KÖRDÜĞÜMÜ MÜ ÇALAYIM YOKSA BAŞKA ŞARKI MI DİNLİYCEZ?",
-    "PAPATYA ÇAYINI ALDIYSAN ŞARKINI BAŞLATIYORUM HATİS",
-    "YARIN BENİM DE YENİ HAYATIMIN İLK GÜNÜ OLUCAK HATİS ÇOK HEYECANLIYIM",
-    "PAPATYA ÇAYI İÇMENİ ÖNERİRİM!! ",
+    "PARDON BİŞE SORUCAM ERKOLAR KAPATILDI MI?\n\n",
+    "KÖRDÜĞÜMÜ MÜ ÇALAYIM YOKSA BAŞKA ŞARKI MI DİNLİYCEZ?\n\n",
+    "PAPATYA ÇAYINI ALDIYSAN ŞARKINI BAŞLATIYORUM HATİS\n\n",
+    "YARIN BENİM DE YENİ HAYATIMIN İLK GÜNÜ OLUCAK HATİS ÇOK HEYECANLIYIM\n\n",
+    "PAPATYA ÇAYI İÇMENİ ÖNERİRİM!! \n\n",
   ];
   let oznurReplikleri = [
-    "OO ÖZNUR HANIM DJ OLDUĞUNUZ AKLINIZA GELDİ ANLAŞILAN.",
-    "SAGOPA MI DİNLİYORUZ YİNE?",
-    "DJ BUGÜN İYİ ÇALIŞIYOR",
-    "SUNUCU MASRAFLARINDAN MUAF OLMAK İSTİYORSAN DAHA FAZLA ŞARKI ÇALMALISIN ÖZNUR",
+    "OO ÖZNUR HANIM DJ OLDUĞUNUZ AKLINIZA GELDİ ANLAŞILAN.\n\n",
+    "SAGOPA MI DİNLİYORUZ YİNE?\n\n",
+    "DJ BUGÜN İYİ ÇALIŞIYOR\n\n",
+    "SUNUCU MASRAFLARINDAN MUAF OLMAK İSTİYORSAN DAHA FAZLA ŞARKI ÇALMALISIN ÖZNUR\n\n",
   ];
   let aymelekReplikleri = [
-    "KESİN YİNE HURDA MURDA BİŞİ ÇALDIRIYOR BANA İMDAAAAT",
-    "HAAANIM İZİN VERDİYSE ŞARKIYI BAŞLATIYORUM",
-    "KAFAM KARIŞTI SANIRIM DEVAYA BASICAM",
-    "UMARIM YİNE TROLL BİR ŞARKI ÇALMIYORUMDUR AYMELEK AHMET SALİH",
+    "KESİN YİNE HURDA MURDA BİŞİ ÇALDIRIYOR BANA İMDAAAAT\n\n",
+    "HAAANIM İZİN VERDİYSE ŞARKIYI BAŞLATIYORUM\n\n",
+    "KAFAM KARIŞTI SANIRIM DEVAYA BASICAM\n\n",
+    "UMARIM YİNE TROLL BİR ŞARKI ÇALMIYORUMDUR AYMELEK AHMET SALİH\n\n",
   ];
   let furkanReplikleri = [
-    "FURKAN GELDİYSE BEN NEDEN DAILY MIX ÇALMIYORUM? ",
-    "SERVETE SERVET GÖRÜNCE ALMAYI UNUTMAYIN İYİ OYUNLAR",
-    "OYUNDA KAZANMANIN SIRRI DOĞRU EKONOMİ ABİ",
-    "GÜZEL KADINLAR DM ATABİLİR",
+    "FURKAN GELDİYSE BEN NEDEN DAILY MIX ÇALMIYORUM? \n\n",
+    "SERVETE SERVET GÖRÜNCE ALMAYI UNUTMAYIN İYİ OYUNLAR\n\n",
+    "OYUNDA KAZANMANIN SIRRI DOĞRU EKONOMİ ABİ\n\n",
+    "GÜZEL KADINLAR DM ATABİLİR\n\n",
   ];
 
   let hatis =
@@ -170,22 +170,21 @@ function disspace(nowQueue, nowTrack) {
     aymelekReplikleri[Math.floor(Math.random() * aymelekReplikleri.length)];
   let furkan =
     furkanReplikleri[Math.floor(Math.random() * furkanReplikleri.length)];
-  console.log(nowTrack.user.username);
 
   const embeded = new EmbedBuilder()
     .setAuthor({
       name: `${
         nowTrack.user.username == "powerofhydrogen" ||
-        song.user.discriminator == "4963"
+        nowTrack.user.discriminator == "4963"
           ? hatis
           : nowTrack.user.username == "hilariy" ||
-            song.user.discriminator == "9428"
+            nowTrack.user.discriminator == "9428"
           ? oznur
           : nowTrack.user.username == "MooonAngel" ||
-            song.user.discriminator == "3420"
+            nowTrack.user.discriminator == "3420"
           ? aymelek
           : nowTrack.user.username == "FUURRKKAANN" ||
-            song.user.discriminator == "3314"
+            nowTrack.user.discriminator == "3314"
           ? furkan
           : "Şarkı çalıyor.."
       }`,

@@ -13,13 +13,13 @@ module.exports = {
     );
 
     const queue = client.distube.getQueue(message);
-    if (!queue) msg.edit(`Şu anda kuyrukta hiçbir şey yok!`);
+    if (!queue) msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const { channel } = message.member.voice;
     if (
       !channel ||
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
-      return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.");
+      return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!");
 
     const uni = `${queue.songs[0].playing ? "⏸️ |" : "🔴 |"}`;
     const part = Math.floor((queue.currentTime / queue.songs[0].duration) * 30);
@@ -35,12 +35,12 @@ module.exports = {
       .setDescription(`**[${queue.songs[0].name}](${queue.songs[0].url})**`)
       .setThumbnail(`${queue.songs[0].thumbnail}`)
       .addFields({
-        name: "Yükleyici:",
+        name: "Yayıncı:",
         value: `[${queue.songs[0].uploader.name}](${queue.songs[0].uploader.url})`,
         inline: true,
       })
       .addFields({
-        name: "Şarkıyı isteyen:",
+        name: "Benden sana gelsin:",
         value: `${queue.songs[0].user}`,
         inline: true,
       })

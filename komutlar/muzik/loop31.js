@@ -13,26 +13,26 @@ module.exports = {
     );
 
     const queue = client.distube.getQueue(message);
-    if (!queue) msg.edit(`Şu anda kuyrukta hiçbir şarkı yok.!`);
+    if (!queue) msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const { channel } = message.member.voice;
     if (
       !channel ||
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
-      return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.");
+      return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!");
 
     if (queue.repeatMode === 0) {
       client.distube.setRepeatMode(message, 1);
       const embed = new EmbedBuilder()
         .setColor("#000001")
-        .setDescription(`\`🔁\` | **Loop Başarıyla Aktif Edildi!**`);
+        .setDescription(`\`🔁\` | **Sürekli aynı şarkıyı dinlemekten bıkmayacak mısın cidden?**`);
 
       msg.edit({ content: " ", embeds: [embed] });
     } else {
       client.distube.setRepeatMode(message, 0);
       const embed = new EmbedBuilder()
         .setColor("#000001")
-        .setDescription(`\`🔁\` | **Loop Devredışı!**`);
+        .setDescription(`\`🔁\` | **Bence de kapatalım artık loopu!**`);
 
       msg.edit({ content: " ", embeds: [embed] });
     }

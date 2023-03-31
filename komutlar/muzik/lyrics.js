@@ -14,13 +14,13 @@ module.exports = {
     );
 
     const queue = client.distube.getQueue(message);
-    if (!queue) msg.edit(`Şu anda kuyrukta hiçbir şey yok.!`);
+    if (!queue) msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const { channel } = message.member.voice;
     if (
       !channel ||
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
-      return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.");
+      return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!");
 
     let song = args.join(" ");
     let CurrentSong = queue.songs[0];
@@ -30,10 +30,10 @@ module.exports = {
 
     try {
       lyrics = await lyricsfinder(song, "");
-      if (!lyrics) msg.edit("Bu şarkı için herhangi bir şarkı sözü bulamadım!");
+      if (!lyrics) msg.edit("Bu şarkının ne yazık ki sözleri yok!");
     } catch (err) {
       console.log(err);
-      msg.edit("Bu şarkı için herhangi bir şarkı sözü bulamadım!");
+      msg.edit("Bu şarkının ne yazık ki sözleri yok!");
     }
     let lyricsEmbed = new EmbedBuilder()
       .setColor("#000001")
@@ -44,7 +44,7 @@ module.exports = {
 
     if (lyrics.length > 2048) {
       lyricsEmbed.setDescription(
-        "Şarkı sözleri görüntülenemeyecek kadar uzun!"
+        "Şarkı sözleri çok uzun yazmaktan sıkıldım!"
       );
     }
 

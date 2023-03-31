@@ -9,14 +9,14 @@ module.exports = {
   },
   run: async (client, message, args) => {
     if (message.author.id != client.sahip)
-      return message.channel.send("günün türkosu selam naber?");
+      return message.channel.send("Heme");
 
     const restart = new EmbedBuilder()
-      .setDescription("**Bot kapatılıyor!!!!**")
+      .setDescription("**İyi geceler!!!!**")
       .setColor("#000001");
 
     await message.channel.send({ embeds: [restart] });
-    console.log("Bot Yeniden Başlatılıyor...");
+    console.log("Merhaba Merhabaa");
 
     process.exit();
   },

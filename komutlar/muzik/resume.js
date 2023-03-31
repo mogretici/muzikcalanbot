@@ -13,26 +13,26 @@ module.exports = {
     );
 
     const queue = client.distube.getQueue(message);
-    if (!queue) msg.edit(`Şu anda kuyrukta hiçbir şey yok.!`);
+    if (!queue) msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const { channel } = message.member.voice;
     if (
       !channel ||
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
-      return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.");
+      return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!");
 
     if (queue.paused) {
       await client.distube.resume(message);
 
       const embed = new EmbedBuilder()
         .setColor("#000001")
-        .setDescription(`\`⏯\` | **Şarkı başarıyla devam etmektedir**`);
+        .setDescription(`\`⏯\` | **Nerde kalmıştık?**`);
 
       msg.edit({ embeds: [embed] });
     } else {
       const embed = new EmbedBuilder()
         .setColor("#000001")
-        .setDescription(`\`⏯\` | **Kuyruk başarıyla devam ediyor**`);
+        .setDescription(`\`⏯\` | **Sıradan devam ediyorum ben o zaman**`);
 
       msg.edit({ embeds: [embed] });
     }

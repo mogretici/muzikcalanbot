@@ -20,7 +20,7 @@ module.exports = {
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
       return msg.edit(
-        "Benimle aynı kanalda olursan müzik dinlemen daha kolay olur. Böyle uzaktan zor."
+        "Benimle aynı kanalda olursan müzik dinlemen daha kolay olur."
       );
 
     if (!queue.autoplay) {

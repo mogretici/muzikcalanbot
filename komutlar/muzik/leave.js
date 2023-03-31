@@ -13,7 +13,7 @@ module.exports = {
     );
     const queue = client.distube.getQueue(message);
 
-    if (!queue) return msg.edit(`Şu anda kuyrukta hiçbir şarkı yok.!`);
+    if (!queue) return msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const clientVoice = message.guild.members.me.voice.channel;
     const memberVoice = message.member.voice.channel;
 
@@ -27,7 +27,7 @@ module.exports = {
 
       const embed = new EmbedBuilder()
         .setDescription(
-          `\`🚫\` | **Başarıyla:** | \`${memberVoice.name}\` **Kanalından Ayrıldım!**`
+          `\`🚫\` | **hoşçağalın gidiyom ben..**`
         )
         .setColor("#000001");
 

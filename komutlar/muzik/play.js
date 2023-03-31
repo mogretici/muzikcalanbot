@@ -19,14 +19,14 @@ module.exports = {
         .permissionsIn(channel)
         .has(PermissionsBitField.Flags.Connect)
     )
-      return message.channel.send(` ${channel.name} Bu kanala bağlanamam!`);
+      return message.channel.send(` ${channel.name} Ben bu kanala bağlanmam!`);
     if (
       !message.guild.members.cache
         .get(client.user.id)
         .permissionsIn(channel)
         .has(PermissionsBitField.Flags.Speak)
     )
-      return message.channel.send(` ${channel.name} Bu kanalda konuşamam!`);
+      return message.channel.send(` ${channel.name} Ben bu kanalda konuşmam!`);
 
     const string = args.join(" ");
     if (!string) {

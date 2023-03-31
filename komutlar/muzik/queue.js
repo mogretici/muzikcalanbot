@@ -11,9 +11,9 @@ module.exports = {
     },
     run: async (client, message, args) => {
         const queue = client.distube.getQueue(message);
-        if (!queue) message.channel.send(`Şu anda kuyrukta hiçbir şey yok.!`)
+        if (!queue) message.channel.send(`Şarkı markı yok kardeşim kalmadı!`)
         const { channel } = message.member.voice;
-        if (!channel || message.member.voice.channel !== message.guild.members.me.voice.channel) return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.")
+        if (!channel || message.member.voice.channel !== message.guild.members.me.voice.channel) return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!")
 
 		const pagesNum = Math.ceil(queue.songs.length / 10);
 		if(pagesNum === 0) pagesNum = 1;
@@ -45,8 +45,8 @@ module.exports = {
 			else return message.channel.send({ embeds: [pages[0]] });
 		}
 		else {
-			if (isNaN(args[0])) return message.channel.send('Bir sayı belirtmelisiniz.');
-			if (args[0] > pagesNum) return message.channel.send(`Yalnızca ${pagesNum} sayfaları kullanılabilir.`);
+			if (isNaN(args[0])) return message.channel.send('Bana bi sayı söyle');
+			if (args[0] > pagesNum) return message.channel.send(`Sadece ${pagesNum} sayfalarını kullanılabilirsin`);
 			const pageNum = args[0] == 0 ? 1 : args[0] - 1;
 			return message.channel.send({ embeds: [pages[pageNum]] });
 		}

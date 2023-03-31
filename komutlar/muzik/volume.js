@@ -13,13 +13,13 @@ module.exports = {
     );
 
     const queue = client.distube.getQueue(message);
-    if (!queue) msg.edit(`Şu anda kuyrukta hiçbir şey yok!`);
+    if (!queue) msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const { channel } = message.member.voice;
     if (
       !channel ||
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
-      return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.");
+      return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!");
 
     const volume = parseInt(args[0]);
 
@@ -34,20 +34,20 @@ module.exports = {
     if (isNaN(volume)) {
       const embed = new EmbedBuilder()
         .setColor("#000001")
-        .setDescription(`Lütfen geçerli bir sayı giriniz!`);
+        .setDescription(`SAYI KANKA, SAYI GİR, SAYI HANİ 1,2,3.. FALAN`);
 
       return msg.edit({ content: " ", embeds: [embed] });
     }
 
     if (Number(volume) < 1 || Number(volume) > 100)
-      return msg.edit(`Lütfen 1 ile 100 arasında bir sayı giriniz!`);
+      return msg.edit(`1-100 arasında bi sayı girersen çok memnun olurum canım kardeşim.`);
 
     client.distube.setVolume(message, volume);
 
     const embed = new EmbedBuilder()
       .setColor("#000001")
       .setDescription(
-        `\`🔊\` | **Ses başarıyla \`%${args[0]}\` olarak ayarlandı!**`
+        `\`🔊\` | **Tamam sesi \`%${args[0]}\` yaptım!**`
       );
 
     msg.edit({ content: " ", embeds: [embed] });

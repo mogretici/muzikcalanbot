@@ -20,7 +20,7 @@ module.exports = {
         .has(PermissionsBitField.Flags.Connect)
     )
       return message.channel.send(
-        ` ${channel.name} Bu kanala Bağlanma İznim Bulunmuyor!`
+        ` ${channel.name} Ben bu kanala bağlanmam!`
       );
     if (
       !message.guild.members.cache
@@ -29,7 +29,7 @@ module.exports = {
         .has(PermissionsBitField.Flags.Speak)
     )
       return message.channel.send(
-        ` ${channel.name} Bu kanalda konuşma iznim bulunmuyor!`
+        ` ${channel.name} Ben bu kanalda konuşmam!`
       );
 
     const clientVoice = message.guild.members.me.voice.channel;
@@ -40,14 +40,14 @@ module.exports = {
         const embed = new EmbedBuilder()
           .setColor("#000001")
           .setDescription(
-            `${message.client.user} Bir kanalda bulunmanız gerekmektedir.`
+            `${message.client.user} Önce bi kanala katılsan mı?`
           );
 
         return msg.edit({ content: " ", embeds: [embed] });
       } else {
         const embed = new EmbedBuilder()
           .setColor("#000001")
-          .setDescription(`Zaten ses kanalındayım!`);
+          .setDescription(`şş Alo Sesim Geli...!`);
 
         return msg.edit({ content: " ", embeds: [embed] });
       }
@@ -59,7 +59,7 @@ module.exports = {
             const embed = new EmbedBuilder()
               .setColor("#000001")
               .setDescription(
-                `\`🔊\` | **Başarıyla** \`${memberVoice.name}\` **Kanalına Katıldım!**`
+                `\`🔊\` | **Bi uyutmadınız ya tamam geldim ** ( \`${memberVoice.name}\` )** !**`
               );
 
             msg.edit({ content: " ", embeds: [embed] });
@@ -70,7 +70,7 @@ module.exports = {
       } else {
         const embed = new EmbedBuilder()
           .setColor("#000001")
-          .setDescription(`Bir ses kanalında olmalısınız.`);
+          .setDescription(`Hadi git bi papatya çayı iç! Sonra gelip bir ses kanalına katıl!`);
 
         return msg.edit({ content: " ", embeds: [embed] });
       }

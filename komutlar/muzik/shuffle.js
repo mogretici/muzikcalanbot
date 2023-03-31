@@ -13,19 +13,19 @@ module.exports = {
     );
 
     const queue = client.distube.getQueue(message);
-    if (!queue) msg.edit(`Şu anda kuyrukta hiçbir şey yok.!`);
+    if (!queue) msg.edit(`Şarkı markı yok kardeşim kalmadı!`);
     const { channel } = message.member.voice;
     if (
       !channel ||
       message.member.voice.channel !== message.guild.members.me.voice.channel
     )
-      return msg.edit("Aynı / sesli kanalda olmanız gerekmektedir.");
+      return msg.edit("Gel kardeşim benimle aynı kanalda olman lazım!");
 
     await client.distube.shuffle(message);
 
     let embed = new EmbedBuilder()
       .setColor("#000001")
-      .setDescription(`\`🔀\` | **Kuyruk başarıyla karıştırıldı!**`);
+      .setDescription(`\`🔀\` | **Kafam karıştı. Sanırım AKP'ye basıcam!**`);
 
     msg.edit({ content: " ", embeds: [embed] });
   },

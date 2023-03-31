@@ -9,7 +9,7 @@ module.exports = {
   },
   run: async (client, message, args) => {
     if (message.author.id != client.sahip)
-      return message.channel.send("Heme");
+      return message.channel.send("Uzaylılar tarafından kaçırıldım. Evet 'tarafından' !!");
 
     const restart = new EmbedBuilder()
       .setDescription("**İyi geceler!!!!**")

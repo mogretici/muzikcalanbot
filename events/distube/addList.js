@@ -1,7 +1,9 @@
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = async (client, queue, playlist) => {
-  const embed = new EmbedBuilder()
+  const embed = new EmbedBuilder();
+  console
+    .log(playlist.user)
     .setDescription(
       `Madem ${playlist.user} istedi. E biz de ${playlist.songs.length} parçalık [${playlist.name}](${playlist.url})** (\`${queue.formattedDuration}\`) dinleyelim.`
       // `**Şarkı kuyruğa eklendi • [${playlist.name}](${playlist.url})** \`${queue.formattedDuration}\` (${playlist.songs.length} tracks) • ${playlist.user}`

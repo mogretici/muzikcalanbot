@@ -33,8 +33,10 @@ class MainClient extends Client {
     client.on("messageCreate", async (message) => {
       if (message.author.bot) return;
       if (
-        message.channel.id === "1095034709626597456" &&
-        message.attachments.size > 0
+        message.channel.name === "sinav" ||
+        message.channel.id === "1095053788513042552" ||
+        (message.channel.id === "1095034709626597456" &&
+          message.attachments.size > 0)
       ) {
         const reply = await message.reply({
           content: `ASLINDA TEK İŞİM MÜZİK ÇALMAK AMA MADEM SINAVINIZ VAR YARDIMCI OLAYIM BARİ :)\n\n Doğru seçeneğin hangisi olduğunu düşünüyorsunuz?`,
